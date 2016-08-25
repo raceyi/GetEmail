@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="takit-biz-plugins-email" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GetEmail</name>
+    <js-module name="GetEmail" src="www/GetEmail.js">
+        <clobbers target="getemail" />
+    </js-module>
+
+<platform name="android">
+  <config-file target="config.xml" parent="/*">
+    <feature name="GetEmail">
+      <param name="android-package"
+             value="biz.takit.plugin.GetEmail"/>
+    </feature>
+  </config-file>
+  <source-file src="src/android/biz/takit/plugin/GetEmail.java" target-dir="src/biz/takit/plugin" />
+  <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+  </config-file>
+</platform>
+
+</plugin>
+
